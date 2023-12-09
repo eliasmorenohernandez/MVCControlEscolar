@@ -1,0 +1,56 @@
+﻿@model MVCControlEscolar.Models.Calificacion
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Realmente desea eliminar este?</h3>
+<div>
+    <h4>Calificaci&oacute;n de Alumno - Grupo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.IdAlumnoNavigation) *@
+            Alumno
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdAlumnoNavigation.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.IdGrupoNavigation) *@
+            Grupo
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdGrupoNavigation.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.CalificacionGrupo) *@
+            Calificaci&oacute;n
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CalificacionGrupo)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.IdEstatusAcreditacionNavigation) *@
+            Estatus de Acreditaci&oacute;n
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdEstatusAcreditacionNavigation.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.IdEstatusRegistroNavigation) *@
+            Estatus de Registro
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdEstatusRegistroNavigation.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />&nbsp;
+        <a asp-action="Index" class="btn btn-primary">Regresar</a>
+    </form>
+</div>
