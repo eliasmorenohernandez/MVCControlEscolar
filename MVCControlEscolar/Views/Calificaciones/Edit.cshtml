@@ -1,0 +1,52 @@
+﻿@model MVCControlEscolar.Models.Calificacion
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Calificaci&oacute;n de Alumno - Grupo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="IdAlumno" class="control-label">Alumno</label>
+                <select asp-for="IdAlumno" class="form-control" asp-items="ViewBag.IdAlumno"></select>
+                <span asp-validation-for="IdAlumno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdGrupo" class="control-label">Grupo</label>
+                <select asp-for="IdGrupo" class="form-control" asp-items="ViewBag.IdGrupo"></select>
+                <span asp-validation-for="IdGrupo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalificacionGrupo" class="control-label">Calificaci&oacute;N</label>
+                <input asp-for="CalificacionGrupo" class="form-control" />
+                <span asp-validation-for="CalificacionGrupo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEstatusAcreditacion" class="control-label">Estatus de Acreditaci&oacute;n</label>
+                <select asp-for="IdEstatusAcreditacion" class="form-control" asp-items="ViewBag.IdEstatusAcreditacion"></select>
+                <span asp-validation-for="IdEstatusAcreditacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEstatusRegistro" class="control-label">Estatus de Registro</label>
+                <select asp-for="IdEstatusRegistro" class="form-control" asp-items="ViewBag.IdEstatusRegistro"></select>
+                <span asp-validation-for="IdEstatusRegistro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />&nbsp;
+                <a asp-action="Index" class="btn btn-primary">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

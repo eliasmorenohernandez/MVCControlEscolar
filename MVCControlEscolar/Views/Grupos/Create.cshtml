@@ -1,0 +1,46 @@
+﻿@model MVCControlEscolar.Models.Grupo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Nuevo</h1>
+
+<h4>Grupo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label">Nombre</label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">|
+                <label asp-for="IdProfesor" class="control-label">Profesor</label>
+                <select asp-for="IdProfesor" class ="form-control" asp-items="ViewBag.IdProfesor"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdMateria" class="control-label">Materia</label>
+                <select asp-for="IdMateria" class ="form-control" asp-items="ViewBag.IdMateria"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEstatusRegistro" class="control-label">Estatus de Registro</label>
+                <select asp-for="IdEstatusRegistro" class ="form-control" asp-items="ViewBag.IdEstatusRegistro"></select>
+            </div>
+            <div class="form-group">
+                &nbsp;
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" /> &nbsp;
+                <a asp-action="Index" class="btn btn-primary">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
